@@ -17,5 +17,30 @@ namespace WebApplication1.Controllers
             ViewBag.CustName = order.CustName;
             return View();
         }
+        public ActionResult Index2(string id)
+        {
+            ViewBag.id = id;
+            return View();
+        }
+        /// <summary>
+        /// 新增訂單畫面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult InsertOrder()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 新增訂單存檔的Action(跑Model)
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
+        [HttpPost()]
+        public ActionResult InsertOrder(Models.Order order)
+        {
+            Models.OrderService orderService = new Models.OrderService();
+            orderService.InsertOrder(order);
+            return View("Index");
+        }
     }
 }

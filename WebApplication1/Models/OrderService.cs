@@ -8,7 +8,7 @@ namespace WebApplication1.Models
     public class OrderService
     {
         
-       public void InsertOrder()
+       public void InsertOrder(Models.Order order)
         {
 
         }
